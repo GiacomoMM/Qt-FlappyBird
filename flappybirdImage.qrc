@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>bottompipe.png</file>
+        <file>flappybird.png</file>
+        <file>flappybirdImage.png</file>
+        <file>toppipe.png</file>
+    </qresource>
+</RCC>
