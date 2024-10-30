@@ -1,1 +1,1 @@
-# Qt-FlappyBird
+# Qt-FlappyBird C++
