@@ -19,10 +19,13 @@ HEADERS += \
 FORMS += \
     mainwindow.ui
 
+ONNX_PATH = C:/Users/giaco/OneDrive/Desktop/onnxruntime-win-x64-1.19.2
+
 PYTORCH_PATH = C:/Users/giaco/OneDrive/Desktop/libtorch
 
 INCLUDEPATH += $$quote($$PYTORCH_PATH/include)
 INCLUDEPATH += $$quote($$PYTORCH_PATH/include/torch/csrc/api/include)
+INCLUDEPATH += $$quote($$ONNX_PATH/include)
 
 # Additional settings for Windows
 win32: {
@@ -33,16 +36,19 @@ win32: {
 
 
     CONFIG(debug, debug|release) {
-    LIBS     += -L"$$PYTORCH_PATH/lib"
+    LIBS    += -L"$$PYTORCH_PATH/lib"
     LIBS    += $$quote($$PYTORCH_PATH/lib/*.lib)
+    LIBS    += -L"$$ONNX_PATH/lib" -lonnxruntime
+    #LIBS    += $$quote($$ONNX_PATH/lib/*.lib)
     }
 
 
     CONFIG(release, debug|release) {
-    LIBS     += -L"$$PYTORCH_PATH/lib"
+    LIBS    += -L"$$PYTORCH_PATH/lib"
     LIBS    += $$quote($$PYTORCH_PATH/lib/*.lib)
+    LIBS    += -L"$$ONNX_PATH/lib" -lonnxruntime
+    #LIBS    += $$quote($$ONNX_PATH/lib/*.lib)
     }
-
 }
 
 # Default rules for deployment.

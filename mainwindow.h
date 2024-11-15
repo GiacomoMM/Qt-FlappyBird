@@ -5,6 +5,7 @@
 #include <QMainWindow>
 #include <QLabel>
 
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -23,6 +24,8 @@ public:
     void updatePosition();
     bool terminato=false;
 
+
+
 public slots:
     void start();
     void reset();
@@ -34,5 +37,9 @@ private:
     void inizializzaGame();
     void train(uint16_t n);
     bool resetCondition(uint8_t i);
+    int scegliAzione(int birdX,int birdY,int UpperPipeX,int UpperPipeY,int BottomPipeX,int BottomPipeY);
+    //void scriviFile(int birdX,int birdY,int UpperPipeX,int UpperPipeY,int BottomPipeX,int BottomPipeY,int Jump);
+    QMutex mutex;
+    bool premuto=false;
 };
 #endif // MAINWINDOW_H
