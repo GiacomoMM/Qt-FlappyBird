@@ -2,4 +2,4 @@
 
 Note:
 Per utilizzare libreria onnxruntime 
-https://github.com/microsoft/onnxruntime/issues/18051
+https://github.com/microsoft/onnxruntime/issues/6243
